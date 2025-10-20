@@ -1,0 +1,14 @@
+bannerStrip:
+  content:
+    en: Powering a Greener Future — Solar, Wind, Hydro & EV Solutions for a Sustainable World
+
+headerBgImg:
+  src: images/headers/bg-waves.png
+  alt: header bg image
+
+globalCTA:
+  heading:
+    en: Join us in the journey
+  description:
+    en: Visit www.pixelrocket.store and learn how to become a frontend web developer
+  ctaLink: getStartedLink

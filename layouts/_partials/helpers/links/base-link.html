@@ -1,0 +1,4 @@
+{{/*  {{$isHome:= or (ne .Kind "" .Kind "page")}}  */}}
+<a href="{{(or .URL .PageRef)}}" class="{{.Params.varient}}"
+  >{{or (T .Identifier) .Name | safeHTML}}</a
+>

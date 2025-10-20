@@ -1,0 +1,12 @@
+{{$currentLang:= site.Language.Lang}}
+{{$ctaSectionContent:= site.Data.sections.cta.CTA}}
+{{$ctaHeading:= index $ctaSectionContent.heading $currentLang}}
+
+{{$ctaCtx:= dict
+"page" .
+"heading" $ctaHeading
+"isVertical" true
+"link" $ctaSectionContent.link
+"images" $ctaSectionContent.images
+}}
+{{ partial "helpers/cta" $ctaCtx }}

@@ -1,0 +1,20 @@
+{{ $imageData := . }}
+{{ $src := .src  }}
+{{ $alt := .alt | default "Image" }}
+{{ $width := .width | default 800 }}
+{{ $height := .height | default 600 }}
+{{$classname:= .classnames}}
+{{ $img := resources.Get $src }}
+{{ with $img }}
+{{ if eq .MediaType.SubType "svg" }}
+<img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" width="{{ $width }}" height="{{ $height }}" class="{{$classname}}"
+  loading="lazy" decoding="async">
+{{ else }}
+
+{{ $optimized := .Resize (printf "%dx%d webp" $width $height) }}
+<img src="{{ $optimized.RelPermalink }}" alt="{{ $alt }}" width="{{ $width }}" class="{{$classname}}"
+  height="{{ $height }}" loading="lazy" decoding="async">
+{{ end }}
+{{ else }}
+<p class="text-red-500">⚠️ Image not found: {{ $src }}</p>
+{{ end }}

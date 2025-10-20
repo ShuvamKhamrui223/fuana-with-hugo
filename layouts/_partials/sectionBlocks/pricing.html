@@ -1,0 +1,40 @@
+{{$currentLang:= site.Language.Lang}} {{$pricingContent:=
+site.Data.sections.pricing}}
+<section class="block-padding inline-padding flex flex-col items-center">
+  <h2 class="text-5xl mb-6 capitalize text-black">
+    {{index $pricingContent.title $currentLang}}
+  </h2>
+  <p class="">{{index $pricingContent.description $currentLang}}</p>
+
+  <ul class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+    {{ range $pricingContent.prices }}
+    <li class="flex flex-col relative rounded-2xl overflow-hidden">
+      {{ if .isRecommended }}
+      <small
+        class="bg-dark-green block w-full px-2 py-1.5 text-center text-white capitalize absolute top-0 left-0"
+        >{{T "pricing.recommended"}}</small
+      >
+      {{ end }}
+      <div
+        class="px-6 py-16 flex flex-col gap-4 rounded-2xl {{ if .isRecommended }}
+    bg-lime
+    {{ else }}
+    bg-light-orange border-t-4 border-t-lime
+    {{ end }}"
+      >
+        <strong class="text-xl font-medium capitalize"
+          >{{index .name $currentLang}}</strong
+        >
+        <h3 class="text-6xl flex items-center gap-2">
+          {{$priceType:= printf "%T" .price}} {{ if eq $priceType "int" }}
+          {{.price |lang.FormatCurrency 0 "USD"}} {{ else }} {{.price}} {{ end
+          }}
+          <span class="text-gray text-lg">{{T "pricing.per_month"}}</span>
+        </h3>
+        <p class="">{{index .bestFor $currentLang}}</p>
+        {{ partial "helpers/links/link" (dict "key" "getStartedLink") }}
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+</section>

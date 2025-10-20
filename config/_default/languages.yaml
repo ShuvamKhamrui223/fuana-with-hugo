@@ -1,0 +1,19 @@
+en:
+  weight: 1
+  languageName: English
+  disabled: false
+  title: Solerize
+  languageCode: en
+  languageDirection: ltr
+  contentDir: content/en
+  menuFile: en.yaml
+  rss: true
+  params:
+    description: solerize - path to green revolusion with soler energy
+    logoUrl:
+      light:
+        src: images/logos/logo-light.svg
+        alt: light version of brand logo
+      dark:
+        src: images/logos/logo-dark.svg
+        alt: dark verion of brand logo

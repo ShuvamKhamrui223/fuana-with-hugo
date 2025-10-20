@@ -1,0 +1,6 @@
+{{ with site.Params.logoUrl.light }} {{$logolightCtx:= dict "page" .
+"src" .src "height" 50 "width" 100 "alt" .alt "classnames" "h-10 w-fit" }}
+<a href="{{.Site.BaseURL}}" class="size-fit">
+  {{ partial "helpers/image" $logolightCtx }}
+</a>
+{{ end }}

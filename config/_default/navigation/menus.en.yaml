@@ -1,0 +1,110 @@
+main:
+  - identifier: about us
+    name: about us
+    pageRef: /about-us
+    weight: 10
+    params:
+      isVisible: true
+      varient: ghost-white
+  - identifier: pricing
+    name: pricing
+    pageRef: /pricing
+    weight: 20
+    params:
+      isVisible: true
+      varient: ghost-white
+  - identifier: contact us
+    name: contact us
+    pageRef: /contact-us
+    weight: 30
+    params:
+      isVisible: true
+      varient: ghost-white
+  - identifier: blog
+    name: blog
+    pageRef: /blog
+    weight: 40
+    params:
+      isVisible: true
+      varient: ghost-white
+footer:
+  - identifier: solutions
+    name: solutions
+    pageRef: /solutions
+    parent: platform
+    weight: 10
+    params:
+      isVisible: true
+      varient: ghost-gray
+  - identifier: how it works
+    name: how it works
+    pageRef: /how-it-works
+    parent: platform
+    weight: 20
+    params:
+      isVisible: true
+      varient: ghost-gray
+  - identifier: pricing
+    name: pricing
+    pageRef: /pricing
+    parent: platform
+    weight: 30
+    params:
+      isVisible: true
+      varient: ghost-gray
+  - identifier: blog
+    name: blog
+    pageRef: /blog
+    weight: 40
+    parent: resources
+    params:
+      isVisible: true
+      varient: ghost-gray
+  - identifier: help center
+    name: help center
+    pageRef: /help-center
+    parent: resources
+    weight: 50
+    params:
+      isVisible: true
+      varient: ghost-gray
+  - identifier: support
+    name: support
+    pageRef: /support
+    parent: resources
+    weight: 60
+    params:
+      isVisible: true
+      varient: ghost-gray
+  - identifier: about
+    name: about
+    pageRef: /about-us
+    weight: 70
+    parent: company
+    params:
+      isVisible: true
+      varient: ghost-gray
+  - identifier: our mission
+    name: our mission
+    pageRef: /our-mission
+    parent: company
+    weight: 80
+    params:
+      isVisible: true
+      varient: ghost-gray
+  - identifier: careers
+    name: careers
+    pageRef: /careers
+    parent: company
+    weight: 90
+    params:
+      isVisible: true
+      varient: ghost-gray
+  - identifier: contact
+    name: contact
+    pageRef: /contact-us
+    parent: company
+    weight: 100
+    params:
+      isVisible: true
+      varient: ghost-gray

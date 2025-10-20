@@ -1,0 +1,14 @@
+{{.Page.RelPermalink}} {{$isHome:= where site.RegularPages "Type" "home" }}
+
+<nav class="flex items-center justify-between px-[4%] py-8">
+  {{ if .IsHome }} {{ partial "common/logo/logo-light" . }} {{ else }} {{
+  partial "common/logo/logo-dark" . }} {{ end }}
+
+  <ul class="hidden md:flex items-center gap-8">
+    {{ range site.Menus.main }} {{ if .Params.isVisible }}
+    <li>{{ partial "helpers/links/base-link" . }}</li>
+    {{ end }} {{ end }}
+  </ul>
+
+  {{ partial "helpers/links/link" (dict "key" "getInTouchLink") }}
+</nav>

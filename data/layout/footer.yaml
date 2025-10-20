@@ -1,0 +1,30 @@
+socialIcons:
+  - platformName: facebook
+    iconUrl: icons/facebook.svg
+    url: https://google.com
+    isExternal: false
+  - platformName: instagram
+    iconUrl: icons/instagram.svg
+    url: https://google.com
+    isExternal: false
+  - platformName: linkedIn
+    iconUrl: icons/linkedin.svg
+    url: https://google.com
+    isExternal: true
+
+bgImg:
+  src: images/footer/waves-lines-left-bottom.png
+  alt: footer background image
+
+newsletterForm:
+  heading:
+    en: your source for green energy updates
+  description:
+    en: Stay in the loop with our Green Horizon newsletter, where we deliver bite-sized insights into the latest green energy solutions.
+  inputPlaceholder:
+    en: your email
+  formButton:
+    label:
+      en: get in touch
+    style: filled
+    isExternal: false

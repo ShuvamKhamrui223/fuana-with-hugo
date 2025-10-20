@@ -1,0 +1,5 @@
+<head>
+  {{ partial "common/head/meta" . }} {{ partial "common/head/links" . }} {{ with
+  (templates.Defer (dict "key" "global")) }} {{ partial "common/css.html" . }} {{ end
+  }}
+</head>

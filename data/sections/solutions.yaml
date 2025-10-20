@@ -1,0 +1,40 @@
+heading:
+  en: Key to clean future
+
+solutions:
+  - title:
+      en: EV charging
+    description:
+      en: EVs use electricity as a power source, which can be generated from renewable energy sources. Our solutions help reducing greenhouse gas emissions in the transportation sector.
+    readMoreLink:
+      url: /blog
+    icon:
+      src: icons/ev-charging.svg
+      alt: ev charging icon
+  - title:
+      en: Solar Energy
+    description:
+      en: Solar panels convert sunlight into electricity. Photovoltaic (PV) cells on these panels capture the energy from the sun and convert it into electrical power.
+    readMoreLink:
+      url: /blog
+    icon:
+      src: icons/solar-energy.svg
+      alt: ev charging icon
+  - title:
+      en: Wind Energy
+    description:
+      en: Wind turbines harness the kinetic energy of the wind to generate electricity. Wind farms with multiple turbines are commonly used to produce large amounts of clean energy.
+    readMoreLink:
+      url: /blog
+    icon:
+      src: icons/wind-energy.svg
+      alt: wind energy icon
+  - title:
+      en: Hydropower
+    description:
+      en: This technology uses the energy from flowing water, such as rivers and dams, to turn turbines and generate electricity. It's one of the oldest forms of renewable energy.
+    readMoreLink:
+      url: /blog
+    icon:
+      src: icons/hydropower.svg
+      alt: wind energy icon

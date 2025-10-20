@@ -1,0 +1,8 @@
+{{ if .sections }}
+    
+{{ range .sections }}
+  {{ partial (printf "sectionBlocks/%s.html" .) $ }}
+ {{ end }}
+{{ else }}
+    <p class="text-gray">no section list found</p>
+{{ end }}

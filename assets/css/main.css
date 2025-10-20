@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+
+@theme {
+  --color-*: initial;
+  --color-lime: hsl(82, 85%, 67%);
+  --color-dark-green: hsl(164, 85%, 11%);
+  --color-black: hsl(0, 0%, 10%);
+  --color-white: hsl(0, 0%, 98%);
+  --color-gray: hsl(0, 0%, 60%);
+  --color-light-orange: hsl(33.3, 100%, 96.5%);
+}
+
+.inline-padding {
+  @apply px-[8%];
+}
+
+.block-padding {
+  @apply py-28;
+}
+
+h2 {
+  @apply text-4xl md:text-6xl text-black mb-4;
+}
+
+a {
+  @apply capitalize;
+}
+
+.ghost-gray {
+  @apply text-gray hover:text-lime;
+}
+
+.ghost-black {
+  @apply text-black hover:text-dark-green;
+}
+
+.ghost-white {
+  @apply text-white hover:text-lime;
+}
+
+.outlined {
+  @apply outline-1 outline-white px-4 py-2 rounded-full text-white hover:bg-lime hover:text-dark-green transition-colors duration-200 flex items-center gap-2;
+}
+
+.filled {
+  @apply bg-dark-green text-lime hover:bg-white rounded-full px-6 py-2;
+
+  &.reverse {
+    @apply text-dark-green bg-lime cursor-pointer;
+  }
+}
+
+a.large {
+  @apply px-8 py-4 text-lg;
+}

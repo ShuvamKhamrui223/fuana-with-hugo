@@ -1,0 +1,44 @@
+{{$footerBgImgRef:= .Site.Data.layout.footer.bgImg.src}} {{$footerBgImgSrc:=
+resources.Get $footerBgImgRef}} {{$footerBgImgWebp:= $footerBgImgSrc.Resize
+"x1400 webp"}}
+<footer
+  class="lg:h-[35rem] bg-white bg-[url('{{$footerBgImgWebp.RelPermalink}}')] bg-blend-multiply bg-no-repeat bg-cover bg-top inline-padding block-padding flex flex-col justify-around"
+>
+  <div
+    class="flex flex-col md:flex-row justify-between gap-14 sm:gap-8"
+  >
+    {{ partial "common/logo/logo-dark" . }} {{$currentLang:=
+    .Site.Language.Lang}}
+    <ul
+      class="flex flex-wrap justify-between lg:flex-row items-start sm:justify-start gap-6 sm:gap-20"
+    >
+      {{ range site.Menus.footer }}
+      <li class="flex flex-col items-start gap-4">
+        <h4 class="font-semibold capitalize">{{.Name}}</h4>
+        {{ if .HasChildren }}
+        <ul class="space-y-2">
+          {{ range .Children }}
+
+          <li>{{ partial "helpers/links/base-link" . }}</li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+
+    {{ partial "components/ui/newsletter-form" . }}
+  </div>
+
+  <div class="flex items-center py-4">
+    <ul class="flex items-center gap-4">
+      {{ range .Site.Data.layout.footer.socialIcons }}
+
+      <li>
+        {{$iconSrc:= resources.Get .iconUrl }}
+        <img src="{{$iconSrc.RelPermalink}}" alt="{{.alt}}" class="" />
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</footer>

@@ -1,0 +1,23 @@
+{{$currentLang:= site.Language.Lang}} {{$solutionsContent:=
+site.Data.sections.solutions}}
+<section class="max-w-[98%] mx-auto bg-lime py-20 inline-padding rounded-2xl">
+  <h2 class="text-4xl md:text-6xl text-black mb-4">
+    {{index $solutionsContent.heading $currentLang}}
+  </h2>
+  <hr class="text-gray mb-6" />
+  <ul class="grid md:grid-cols-2 gap-8x">
+    {{ range $solutionsContent.solutions }}
+
+    <li class="flex flex-col gap-4 py-8">
+      {{$iconCtx := dict "page" . "src" .icon.src "alt" .icon.alt "classnames"
+      "size-12" }} {{ partial "helpers/image" $iconCtx }}
+      <h4 class="text-2xl text-black font-semibold">
+        {{index .title $currentLang}}
+      </h4>
+      <p class="md:max-w-[75ch] mb-2">{{index .description $currentLang}}</p>
+      {{ partial "helpers/links/link" (dict "key" "readMoreLink") }}
+    </li>
+    {{ end }}
+  </ul>
+  {{index .Site.Data.links.getInTouchLink $currentLang}}
+</section>

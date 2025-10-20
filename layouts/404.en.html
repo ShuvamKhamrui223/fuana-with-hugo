@@ -1,0 +1,9 @@
+{{ define "main" }}
+<section class="min-h-screen flex flex-col gap-4 items-center justify-center">
+  <h1 class="text-neutral-800 text-7xl">404 Not Found</h1>
+  <p>The page you requested cannot be found.</p>
+  <a class="filled mt-5" href="{{ .Site.Home.RelPermalink }}">
+    Back to home page
+  </a>
+</section>
+{{ end }}

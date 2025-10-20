@@ -1,0 +1,23 @@
+title:
+  en: pricing
+description:
+  en: Our pricing plans are simple and designed to cater to households and companies of various sizes. Choose a plan that suits your needs and budget.
+prices:
+  - name: 
+      en: basic
+    price: 59
+    bestFor:
+      en: For small households or businesses with moderate energy consumption
+    isRecommended: false
+  - name: 
+      en: premium
+    price: 59
+    bestFor:
+      en: For small households or businesses with moderate energy consumption
+    isRecommended: true
+  - name: 
+      en: enterprise
+    price: Custom
+    bestFor:
+      en: Tailored for businesses with significant energy demands
+    isRecommended: false

@@ -1,0 +1,2 @@
+{{ define "main" }} {{ range .Params.sections }} {{ partial (printf
+"sectionBlocks/%s.html" .) $ }} {{ end }} {{ end }}

@@ -1,0 +1,20 @@
+- name: getInTouchLink
+  href: /contact-us
+  style: outlined
+  isExternal: false
+  iconUrl:
+    src: icons/arrow-right.svg
+    alt: arrow right
+  isIconOnRight: true
+- name: readMoreLink
+  href: /
+  style: ghost-black
+  isExternal: false
+- name: getStartedLink
+  href: /
+  style: filled reverse large
+  isExternal: false
+- name: seeOurSolutions
+  href: /
+  style: filled reverse large
+  isExternal: false

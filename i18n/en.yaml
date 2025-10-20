@@ -1,0 +1,25 @@
+- id: hero.title
+  translation: Energizing a Green Future
+- id: hero.description
+  translation: Our commitment to green energy is paving the way for a cleaner, healthier planet. Join us on a journey towards a future where clean, renewable energy sources transform the way we power our lives.
+
+# translasion of links
+- id: getInTouchLink
+  translation: get in touch
+
+- id: seeOurSolutions
+  translation: see our solutions
+
+- id: getInTouchLink
+  translation: get in touch
+
+- id: readMoreLink
+  translation: read more
+  
+- id: getStartedLink
+  translation: get started
+- id: pricing.per_month
+  translation: per month
+
+- id: pricing.recommended
+  translation: recommended

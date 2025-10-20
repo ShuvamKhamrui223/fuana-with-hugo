@@ -1,0 +1,25 @@
+{{$currentLang:= site.Language.Lang}} {{$faqContent:= site.Data.sections.faq}}
+
+<section
+  class="block-padding inline-padding flex flex-col items-center justify-center"
+>
+  <h2>{{index $faqContent.heading $currentLang}}</h2>
+  <p class="mb-10 text-gray">{{index $faqContent.description $currentLang}}</p>
+
+  {{ if $faqContent.queries }}
+  <ul class="flex flex-col gap-4">
+    {{ range $faqContent.queries }}
+    <li class="px-4 py-5 rounded-2xl outline-1 outline-gray/40">
+      <details class="group">
+        <summary
+          class="cursor-pointer group-open:text-2xl first-letter:uppercase"
+        >
+          {{index .question $currentLang}}
+        </summary>
+        <p class="max-w-[65ch] py-4 px-3">{{index .answer $currentLang}}</p>
+      </details>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</section>

@@ -1,0 +1,6 @@
+{{$currentLang:= .Site.Language.Lang}} {{$ctaContent:=
+.Site.Data.common.globalCTA}} {{$ctaHeading:= index $ctaContent.heading
+$currentLang}} {{$ctaDescription:= index $ctaContent.description $currentLang}}
+{{$ctaCtx:= dict "page" . "withBackgroundColor" true "isVertical" false
+"heading" $ctaHeading "description" $ctaDescription "link" $ctaContent.ctaLink
+}} {{ partial "helpers/cta" $ctaCtx }}

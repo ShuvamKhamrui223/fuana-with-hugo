@@ -1,0 +1,6 @@
+{{$currentlang:= .Site.Language.Lang}} {{ with .Site.Data.common.bannerStrip }}
+
+<p class="w-full bg-lime py-3 px-4 text-center text-dark-green text-sm">
+  {{index .content $currentlang}}
+</p>
+{{ end }}

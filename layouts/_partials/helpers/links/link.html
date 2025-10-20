@@ -1,0 +1,55 @@
+{{$currentLang:= site.Language.Lang}}
+{{$ctx:= . }}
+{{$linkName:= .key}}
+{{ $filteredLink := where site.Data.global.links "name" "eq" $linkName }}
+{{$link:= index $filteredLink 0}}
+
+
+{{ if $filteredLink }}
+{{$linkStyle:= $link.style}}
+{{$linkHref:= $link.href}}
+{{$linkExternality:= $link.isExternal}}
+{{$label := T $link.name}}
+<a
+href="{{$linkHref}}"
+{{if
+ $link.isExternal}}rel="noopener noreferrer"
+ target="_blank"
+ {{end}}
+ class="{{ $link.style | default "ghost-white" }} {{ if and $label $link.iconUrl }}
+ flex items-center gap-2
+ {{ end }} group"
+ aria-label="{{ $label }}"
+ >  
+ {{$iconSrc:= $link.iconUrl.src }}
+  {{$iconAlt:= $link.iconUrl.alt | default "icon of {{$label}} link" }}
+  {{$icon := resources.Get $iconSrc}} 
+  {{ if (and $link.iconUrl (not $label)) }} 
+  <img src="{{$icon.RelPermalink}}" class="invert group-hover:invert-0" alt="{{$iconAlt}}" />  
+  {{end}}
+
+  {{ if (and $label (not $link.iconUrl)) }} 
+{{$label}}{{end}}
+
+  {{ if (and $link.iconUrl $label) }}
+  
+  {{ if  $link.isIconOnRight }}
+  
+  {{$label}}
+  <img src="{{$icon.RelPermalink}}" alt="{{$iconAlt}}" class="invert group-hover:invert-0 " />
+  {{ else }}
+  <img src="{{$icon.RelPermalink}}" alt="{{$iconAlt}}" class="invert group-hover:invert-0 " />
+  {{$label}}
+  
+  {{ end }}
+  {{end}}
+
+</a>
+
+{{ else }}
+<p class="text-red-500">⚠️ Link {{ $linkName }} not found in data/links.yaml</p>
+
+{{ end }}
+{{/* 
+  
+  */}}

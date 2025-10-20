@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{.Site.Language.Lang}}" dir="{{site.Language.LanguageDirection}}">
+  {{ partial "common/head/head" . }}
+  <body>
+    {{ partial "components/layout/banner-strip" . }} {{ partial
+    "components/layout/header" . }}
+
+    <main class="min-h-[90vh] bg-neutral-100">
+      {{ block "main" . }} {{ end }}
+    </main>
+    {{ partial "components/layout/global-cta" . }} {{ partial
+    "components/layout/footer" . }}
+  </body>
+</html>
