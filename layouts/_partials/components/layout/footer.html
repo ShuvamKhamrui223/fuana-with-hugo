@@ -4,9 +4,7 @@ resources.Get $footerBgImgRef}} {{$footerBgImgWebp:= $footerBgImgSrc.Resize
 <footer
   class="lg:h-[35rem] bg-white bg-[url('{{$footerBgImgWebp.RelPermalink}}')] bg-blend-multiply bg-no-repeat bg-cover bg-top inline-padding block-padding flex flex-col justify-around"
 >
-  <div
-    class="flex flex-col md:flex-row justify-between gap-14 sm:gap-8"
-  >
+  <div class="flex flex-col md:flex-row justify-between gap-14 sm:gap-8">
     {{ partial "common/logo/logo-dark" . }} {{$currentLang:=
     .Site.Language.Lang}}
     <ul

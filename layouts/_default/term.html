@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section
+  class="inline-padding block-padding grid gap-6 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3"
+>
+  {{ range .Pages }}
+  <li class="flex flex-col gap-3">
+    {{if .Params.coverImg}} {{ partial "helpers/image" (dict "page" . "src"
+    .Params.coverImg "alt" .LinkTitle "class" "w-full") }} {{end}}
+    <a href="{{.RelPermalink}}" class="text-black hover:text-">{{.Title}}</a>
+  </li>
+  {{ end }}
+</section>
+{{ end }}

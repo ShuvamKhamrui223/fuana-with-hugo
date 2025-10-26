@@ -43,6 +43,10 @@ a {
   @apply outline-1 outline-white px-4 py-2 rounded-full text-white hover:bg-lime hover:text-dark-green transition-colors duration-200 flex items-center gap-2;
 }
 
+.outlined-dark {
+  @apply outline-1 outline-white px-4 py-2 rounded-full bg-dark-green text-white hover:bg-lime hover:text-dark-green transition-colors duration-200 flex items-center gap-2;
+}
+
 .filled {
   @apply bg-dark-green text-lime hover:bg-white rounded-full px-6 py-2;
 
@@ -52,5 +56,8 @@ a {
 }
 
 a.large {
-  @apply px-8 py-4 text-lg;
+  @apply px-8 py-4 text-sm md:text-lg;
+}
+.contact-us-form-inputs {
+  @apply px-4 py-3 outline-1 outline-gray/50 rounded-full focus-within:outline-lime;
 }

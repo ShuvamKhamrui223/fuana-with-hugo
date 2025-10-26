@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="block-padding inline-padding flex flex-col gap-5">
+  <h2 class="capitalize">{{T "blog.heading"}}</h2>
+
+  <ul class="w-full grid grid-cols-3 gap-6">
+    {{ range .Pages.ByDate }}
+     {{/* {{index}} */}}
+     {{/*  {{ if  }}
+      0
+     {{ else }}
+      
+     {{ end }}  */}}
+    <li class="first:col-start-1 first:col-end-3 col-start-3 col-end-4 h-fit flex flex-col gap-3">
+      {{if .Params.coverImg}} {{ partial "helpers/image" (dict "page" . "src"
+      .Params.coverImg "alt" .LinkTitle "class" "w-full h-auto rounded-2xl") }}
+      {{end}}
+      <a href="{{.RelPermalink}}" class="text-black hover:text-">{{.Title}}</a>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+
+{{ end }}

@@ -1,7 +1,10 @@
 CTA:
   heading:
     en: Our commitment to green energy is paving the way for a cleaner, healthier planet.
-  link: getInTouchLink
+  link:
+    name: getInTouchLink
+    style: filled large
+    href: /en/contact-us
   images:
     - src: images/cta/about-image2.png
       alt: first image

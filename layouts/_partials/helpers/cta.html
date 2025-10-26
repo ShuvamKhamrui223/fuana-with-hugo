@@ -11,8 +11,10 @@
   >
     {{.heading}}
   </h3>
-  {{ partial "helpers/links/link" (dict "key" .link) }} {{/* image gallery */}} {{ if
-  .images }}
+
+  {{ if .link }} {{$ctaLinkCtx:= dict "ctx" . "name" .link.name "style"
+  .link.style "href" .link.href}} {{ partial "helpers/links/link" $ctaLinkCtx }}
+  {{ end }} {{/* image gallery */}} {{ if .images }}
   <ul
     class="w-full mt-5 flex justify-center flex-nowrap gap-5 items-center overflow-hidden"
   >
@@ -29,11 +31,11 @@
 {{ else }}
 
 <section
-  class="flex items-center {{if .isVertical}} flex-col {{else}} flex-col gap-10 md:flex-row justify-between {{end}} {{if .withBackgroundColor}} bg-dark-green {{end}} px-[8%] py-20 max-w-[98%] rounded-2xl mx-auto"
+  class="flex items-center flex-col gap-6 md:gap-0 md:flex-row justify-between {{if .withBackgroundColor}} bg-dark-green {{end}} px-[8%] py-20 max-w-[98%] rounded-2xl mx-auto"
 >
-  <div class="flex flex-col gap-5">
+  <div class="flex flex-col gap-5 text-center md:text-left">
     <h3
-      class="text-5xl {{if .withBackgroundColor}} text-white {{else}} text-black {{end}}"
+      class="text-4xl md:text-5xl {{if .withBackgroundColor}} text-white {{else}} text-black {{end}}"
     >
       {{.heading}}
     </h3>
@@ -53,8 +55,9 @@
   </div>
 
   <div class="flex items-center">
-    {{ if .link }} {{ partial "helpers/links/link" (dict "key" .link) }} {{ end
-    }}
+    {{- if .link -}} {{$ctaLinkCtx:= dict "ctx" . "name" .link.name "style"
+    .link.style "href" .link.href}} {{ partial "helpers/links/link" $ctaLinkCtx
+    }} {{- end -}}
   </div>
 </section>
 {{ end }}

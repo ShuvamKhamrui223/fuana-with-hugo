@@ -1,4 +1,4 @@
-- name: getInTouchLink
+- name: getInTouchLinkWithIcon
   href: /contact-us
   style: outlined
   isExternal: false
@@ -6,6 +6,10 @@
     src: icons/arrow-right.svg
     alt: arrow right
   isIconOnRight: true
+- name: getInTouchLink
+  href: /
+  isExternal: false
+  style: filled large reverse
 - name: readMoreLink
   href: /
   style: ghost-black

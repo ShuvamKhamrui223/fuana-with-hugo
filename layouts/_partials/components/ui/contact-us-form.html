@@ -1,0 +1,40 @@
+<form
+  action="#"
+  class="bg-white shadow shadow-gray px-6 pt-8 pb-14 w-full sm:max-w-[85%] lg:max-w-[70%] xl:max-w-[35%] rounded-2xl flex flex-col gap-4 mt-4"
+>
+  {{$currentLang:= site.Language.Lang}} {{ range
+  site.Data.sections.contactUs.formInputs }}
+
+  <div class="flex flex-col gap-2">
+    <label for="" class="text-black capitalize font-medium ml-2"
+      >{{index .label $currentLang}} {{ if .isOptional }}
+      <span class="text-gray">({{T "contact-us.form.optional"}})</span>
+      {{ end }}</label
+    >
+    {{ if eq .type "text" }}
+
+    <input type="{{.type}}" class="contact-us-form-inputs" />
+    {{ end }} {{ if eq .type "select" }}
+    <select name="" id="" class="contact-us-form-inputs capitalize">
+      <option value="" class="">
+        {{T "contact-us.form.service__placeholder"}}
+      </option>
+      {{ if .options }}
+        
+      {{ range .options }}
+      <option value="{{.}}" class="capitalize">{{.}}</option>
+      {{.}}
+      {{ end }}
+      {{ end }}
+    </select>
+    {{ end }}
+  </div>
+
+  {{ end }} {{$arrow:= resources.Get "icons/arrow-right.svg"}}
+  <button
+    class="bg-dark-green text-white hover:bg-lime hover:text-dark-green transition-colors duration-200 px-4 py-2 rounded-full cursor-pointer capitalize flex items-center justify-center gap-2.5"
+  >
+    {{T "contact-us.form.submitLabel"}}
+    <img src="{{$arrow.RelPermalink}}" alt="" class="invert" />
+  </button>
+</form>

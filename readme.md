@@ -6,7 +6,7 @@ This website is created for a renewable energy distribution company, has multipl
 
 It follows **Hybrid content management** model to structure the website in a way where reusable content or properties will be stored in data files and translations will be place inside i18n folder of the corresponding language It has multilingual config enabled such that anyone can add more languages and its relevant content for the site.
 
-Additionally, this project has several high-level components like image, link and many others those can be reused across the entire site.
+Additionally, this project has several high-level components like image and many others those can be reused across the entire site.
 
 ## Components
 
@@ -62,9 +62,3 @@ image component takes path/ src of any image stored in assets folder and returns
 this component renders a component based on the given section name
 
 **@params**: **sections** are names of sections needed in a specific page mentioned in frontmatter
-
-#### links
-
-there are two types of link components, base `base-link.html` and custom `link.html`
-
-base link is only for simpler tasks like nav or footer, where not a lot of styling is needed. as paramter it takes menuEntry object along with varient params attached with each entry

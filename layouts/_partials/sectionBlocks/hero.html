@@ -3,11 +3,14 @@ site.Data.sections.hero.hero}}
 <section
   class="min-h-[60vh] md:h-[53rem] block-padding inline-padding flex flex-col gap-6 items-center justify-center"
 >
-  <h1 class="text-6xl md:text-8xl text-center text-white capitalize md:max-w-[15ch]">
+  <h1
+    class="text-6xl md:text-8xl text-center text-white capitalize md:max-w-[15ch]"
+  >
     {{index $heroContent.title $currentLang}}
   </h1>
   <p class="text-center max-w-[65ch] text-white">
     {{index $heroContent.description $currentLang }}
   </p>
-{{ partial "helpers/links/link" (dict "key" $heroContent.linkKey) }}
+  {{$heroLinkCtx:= dict "ctx" . "name" $heroContent.link.name "style" 
+  $heroContent.link.style "href" $heroContent.link.href}} {{ partial "helpers/links/link" $heroLinkCtx }}
 </section>

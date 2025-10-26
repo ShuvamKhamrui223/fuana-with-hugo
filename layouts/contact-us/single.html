@@ -1,0 +1,12 @@
+{{ define "main" }} {{$bgImg:= resources.Get
+"images/contact/waves-bg-lime.png"}}
+<section
+  class="block-padding inline-padding bg-[url('{{$bgImg.RelPermalink}}')] bg-cover bg-gradient-to-b from-transparent to-black min-h-screen flex flex-col items-center gap-4"
+>
+  <h2 class="capitalize">{{T "contact-us.heading"}}</h2>
+
+  <p class="text-gray text-xl">{{T "contact-us.subtitle"}}</p>
+
+  {{ partial "components/ui/contact-us-form" . }}
+</section>
+{{ end }}

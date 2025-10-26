@@ -1,14 +1,37 @@
-{{.Page.RelPermalink}} {{$isHome:= where site.RegularPages "Type" "home" }}
-
-<nav class="flex items-center justify-between px-[4%] py-8">
-  {{ if .IsHome }} {{ partial "common/logo/logo-light" . }} {{ else }} {{
+{{$ctx:= .ctx}} {{$isHome:= $ctx.IsHome }}
+<nav
+  class="flex items-center justify-between px-[4%] py-6 {{if not $isHome}} border-b border-b-gray {{end}}"
+>
+  {{ if $isHome }} {{ partial "common/logo/logo-light" . }} {{ else }} {{
   partial "common/logo/logo-dark" . }} {{ end }}
 
   <ul class="hidden md:flex items-center gap-8">
     {{ range site.Menus.main }} {{ if .Params.isVisible }}
-    <li>{{ partial "helpers/links/base-link" . }}</li>
+    <li>
+      <a
+        href="{{(or .URL .PageRef)}}"
+        {{
+        if
+        .Params.isExternal
+        }}
+        target="_blank"
+        {{
+        end
+        }}
+        class="{{ if $isHome }}{{.Params.varient}}{{ else }}ghost-black{{ end }}"
+        >{{or (T .Identifier) .Name | safeHTML}}</a
+      >
+    </li>
     {{ end }} {{ end }}
   </ul>
 
-  {{ partial "helpers/links/link" (dict "key" "getInTouchLink") }}
+  {{ with site.Data.common.getInTouchLinkWithIcon }}
+   {{if $isHome }}
+   {{$getInTouchCtx:= dict "ctx" . "name" .name "style" .style}}
+   {{ partial "helpers/links/link" $getInTouchCtx }}
+   {{ else }} 
+   {{$getInTouchCtx:= dict "ctx" . "name" .name "style" "outlined-dark"}}
+   {{ partial "helpers/links/link" $getInTouchCtx }}
+  {{ end }}  
+    {{ end }}
 </nav>

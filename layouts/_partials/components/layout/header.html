@@ -5,12 +5,12 @@
 <header
   class="h-fit {{if $isHomePage}} bg-dark-green bg-[url('{{$headerBgImgWebp.RelPermalink}}')] bg-blend-screen bg-cover bg-center bg-fixed {{else}} bg-white {{end}}"
 >
-  {{ partial "components/layout/nav" . }} {{if $isHomePage }} {{partial
-  "sectionBlocks/hero" . }} {{end}}
+  {{ partial "components/layout/nav" (dict "ctx" $) }} {{if $isHomePage }}
+  {{partial "sectionBlocks/hero" . }} {{end}}
 </header>
 {{ else }}
 <header class="h-fit bg-dark-green">
-  {{ partial "components/layout/nav" . }} {{ if $isHomePage }} {{ partial
+  {{ partial "components/layout/nav" (dict "ctx" $) }} {{ if $isHomePage }} {{ partial
   "sectionBlocks/hero" . }} {{ end }}
 </header>
 

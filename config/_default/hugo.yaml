@@ -4,6 +4,12 @@ title: Solerize
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: true
 
+# taxonomies
+taxonomies:
+  tag: tags
+  category: categories
+  author: authors
+  
 # multilingual 404 page config
 server:
   headers: null

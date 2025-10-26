@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="block-padding inline-padding flex flex-col gap-6">
+  <h2 class="">{{.Title}}</h2>
+
+  {{if .Params.coverImg}} {{ partial "helpers/image" (dict "page" . "src"
+  .Params.coverImg "alt" .LinkTitle "class" "w-full h-[20rem] object-cover") }}
+  {{end}}
+  <ul class="flex flex-wrap gap-3">
+    {{ range .GetTerms "tags" }}
+    <a
+      href="{{.RelPermalink}}"
+      class="text-sm bg-lime px-4 py-2 hover:brightness-90"
+      >{{.Name}}</a
+    >
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

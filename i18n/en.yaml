@@ -1,10 +1,42 @@
+# translations of sections
 - id: hero.title
   translation: Energizing a Green Future
+
 - id: hero.description
   translation: Our commitment to green energy is paving the way for a cleaner, healthier planet. Join us on a journey towards a future where clean, renewable energy sources transform the way we power our lives.
 
+- id: pricing.per_month
+  translation: per month
+
+- id: pricing.recommended
+  translation: recommended
+
+- id: blog.heading
+  translation: blog
+
+- id: contact-us.heading
+  translation: contact us
+
+- id: contact-us.subtitle
+  translation: We are here to help you make a first move to greener choice.
+
+- id: contact-us.form.optional
+  translation: optional
+
+- id: contact-us.form.service__placeholder
+  translation: select service
+
+- id: contact-us.form.submitLabel
+  translation: submit
+
+- id: about-us.heading
+  translation: about us
+
+- id: about-us.description
+  translation: "At Flora&Fauna, we're committed to a sustainable future. As a pioneering force in the green energy sector, we've been at the forefront of the transition to clean, renewable power sources. Our mission is simple yet profound: to create a world where energy is not only abundant but also environmentally responsible. We believe that by harnessing the power of nature, we can power the world and protect it simultaneously."
+
 # translasion of links
-- id: getInTouchLink
+- id: getInTouchLinkWithIcon
   translation: get in touch
 
 - id: seeOurSolutions
@@ -15,11 +47,6 @@
 
 - id: readMoreLink
   translation: read more
-  
+
 - id: getStartedLink
   translation: get started
-- id: pricing.per_month
-  translation: per month
-
-- id: pricing.recommended
-  translation: recommended

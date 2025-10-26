@@ -6,9 +6,22 @@ headerBgImg:
   src: images/headers/bg-waves.png
   alt: header bg image
 
+getInTouchLinkWithIcon:
+  name: getInTouchLinkWithIcon
+  href: /contact-us
+  style: outlined
+  isExternal: false
+  iconUrl:
+    src: icons/arrow-right.svg
+    alt: arrow right
+  isIconOnRight: true
+
 globalCTA:
   heading:
     en: Join us in the journey
   description:
     en: Visit www.pixelrocket.store and learn how to become a frontend web developer
-  ctaLink: getStartedLink
+  ctaLink: 
+    name: getStartedLink
+    href: /en/contact
+    style: filled reverse large

@@ -15,9 +15,26 @@ site.Data.sections.solutions}}
         {{index .title $currentLang}}
       </h4>
       <p class="md:max-w-[75ch] mb-2">{{index .description $currentLang}}</p>
-      {{ partial "helpers/links/link" (dict "key" "readMoreLink") }}
+      {{ with .link }}
+      <a
+        href="{{(.url)}}"
+        class="ghost-black w-fit"
+        {{
+        if
+        .isExternal
+        }}
+        target="_blank"
+        {{
+        else
+        }}
+        target="_self"
+        {{
+        end
+        }}
+        >{{T .name}}</a
+      >
+      {{ end }}
     </li>
     {{ end }}
   </ul>
-  {{index .Site.Data.links.getInTouchLink $currentLang}}
 </section>

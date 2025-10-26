@@ -1,39 +1,39 @@
 {{$currentLang:= site.Language.Lang}}
 {{$ctx:= . }}
-{{$linkName:= .key}}
-{{ $filteredLink := where site.Data.global.links "name" "eq" $linkName }}
-{{$link:= index $filteredLink 0}}
+{{$linkName:= .name}}
+{{/*  {{ $filteredLink := where site.Data.global.links "name" "eq" $linkName }}
+{{$link:= index $filteredLink 0}}  */}}
 
 
-{{ if $filteredLink }}
-{{$linkStyle:= $link.style}}
-{{$linkHref:= $link.href}}
-{{$linkExternality:= $link.isExternal}}
-{{$label := T $link.name}}
+{{/*  {{ if $filteredLink }}  */}}
+{{$linkStyle:= .style}}
+{{$linkHref:= .href}}
+{{$linkExternality:= .isExternal}}
+{{$label := T $linkName}}
 <a
 href="{{$linkHref}}"
 {{if
- $link.isExternal}}rel="noopener noreferrer"
+ .isExternal}}rel="noopener noreferrer"
  target="_blank"
  {{end}}
- class="{{ $link.style | default "ghost-white" }} {{ if and $label $link.iconUrl }}
+ class="{{ .style | default "ghost-white" }} {{ if and $label .iconUrl }}
  flex items-center gap-2
  {{ end }} group"
  aria-label="{{ $label }}"
  >  
- {{$iconSrc:= $link.iconUrl.src }}
-  {{$iconAlt:= $link.iconUrl.alt | default "icon of {{$label}} link" }}
+ {{$iconSrc:= .iconUrl.src }}
+  {{$iconAlt:= .iconUrl.alt | default "icon of {{$label}} link" }}
   {{$icon := resources.Get $iconSrc}} 
-  {{ if (and $link.iconUrl (not $label)) }} 
+  {{ if (and .iconUrl (not $label)) }} 
   <img src="{{$icon.RelPermalink}}" class="invert group-hover:invert-0" alt="{{$iconAlt}}" />  
   {{end}}
 
-  {{ if (and $label (not $link.iconUrl)) }} 
+  {{ if (and $label (not .iconUrl)) }} 
 {{$label}}{{end}}
 
-  {{ if (and $link.iconUrl $label) }}
+  {{ if (and .iconUrl $label) }}
   
-  {{ if  $link.isIconOnRight }}
+  {{ if  .isIconOnRight }}
   
   {{$label}}
   <img src="{{$icon.RelPermalink}}" alt="{{$iconAlt}}" class="invert group-hover:invert-0 " />
@@ -46,10 +46,7 @@ href="{{$linkHref}}"
 
 </a>
 
-{{ else }}
+{{/*  {{ else }}
 <p class="text-red-500">⚠️ Link {{ $linkName }} not found in data/links.yaml</p>
 
-{{ end }}
-{{/* 
-  
-  */}}
+{{ end }}  */}}

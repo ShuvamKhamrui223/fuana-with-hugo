@@ -1,0 +1,22 @@
+formInputs:
+  - label:
+      en: full name
+    type: text
+    isOptional: false
+  - label:
+      en: email
+    type: email
+    isOptional: false
+  - label:
+      en: company
+    type: text
+    isOptional: true
+  - label:
+      en: service
+    type: select
+    isOptional: false
+    options:
+      - sales
+      - marketing
+
+# tapati golden vinayak acres 

@@ -1,0 +1,8 @@
+{{$ctx:= .}} {{$isVertical:= .isVertical | default false}} {{$ctx}}
+<li
+  class="first:col-span-3 flex {{if $isVertical}}flex-col{{else}}flex-row{{end}}"
+>
+  {{/* {{ partial "helpers/image" (dict "page" . "src" .Params.coverImg "alt"
+  .LinkTitle) }} */}}
+  <a href="{{.RelPermalink}}">{{$ctx.Title}}</a>
+</li>
